@@ -1,0 +1,36 @@
+{% extends "layout.njk" %}
+{% set active_page = "review" %}
+{% import "../templates/components/header-title.njk" as title %}
+
+  {% block content %}
+
+    {% include "components/header.njk" %}
+
+    {{
+      title.titleInfo (
+        'Review',
+        'Your Inventory',
+        '
+          Based on your checklist, these frames are not currently
+          present in your office. Please indicate a restock preference
+          below.
+        ',
+        'false'
+      )
+    }}
+
+    <main class="pt-4">
+      {% include "components/frame-review.njk" %}
+    </main>
+
+    {% include "components/main-nav.njk" %}
+
+    <!-- Modals -->
+    {% include "components/modals/modal-invoice-and-restock.njk" %}
+    {% include "components/modals/modal-invoice-only.njk" %}
+    {% include "components/modals/modal-return-to-altair.njk" %}
+    {% include "components/modals/modal-not-received.njk" %}
+    {% include "components/modals/modal-new-frames.njk" %}
+    {% include "components/modals/modal-realignment.njk" %}
+
+  {% endblock %}

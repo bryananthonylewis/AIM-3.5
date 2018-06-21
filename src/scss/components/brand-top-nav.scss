@@ -1,0 +1,40 @@
+.brand-top-nav {
+  background: $light-green;
+
+  .nav-toggle {
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+
+  .nav-container {
+    display: none;
+  }
+
+  a {
+    color: $gray;
+    line-height: normal;
+
+    &:hover {
+      color: $gray;
+      text-decoration: none;
+    }
+  }
+
+  small {
+    font-size: 70%;
+  }
+} // .brand-top-nav
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .brand-top-nav {
+    a {
+      width: 75px;
+
+      &:hover,
+      &.active {
+        background: $white;
+      }
+    }
+  } // .brand-top-nav
+} // Medium

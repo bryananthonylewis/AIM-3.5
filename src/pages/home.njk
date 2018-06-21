@@ -1,0 +1,11 @@
+{% extends "layout.njk" %}
+{% set active_page = "home" %}
+{% block content %}
+
+  {% include "components/header.njk" %}
+  <main>
+    {% include "components/welcome.njk" %}
+  </main>
+  {% include "components/main-nav.njk" %}
+
+{% endblock %}

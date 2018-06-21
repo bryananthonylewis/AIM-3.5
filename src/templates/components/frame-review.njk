@@ -1,0 +1,35 @@
+<div class="frame-review">
+  <form action="#">
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col">
+          <h5>
+            000 Frames to Review
+          </h5>
+        </div>
+      </div>
+      <!-- frames to review loop include -->
+      {% include "components/frame-review/frames-to-review-loop.njk" %}
+
+      <div class="row mb-3 pt-2">
+        <div class="col">
+          <h5>
+            New Frames <sup data-toggle="modal" data-target="#NewFrameModal">?</sup>
+          </h5>
+        </div>
+      </div>
+      <!-- new frames loop include -->
+      {% include "components/frame-review/new-frames-loop.njk" %}
+
+      <div class="row mb-3 pt-2">
+        <div class="col">
+          <h5>
+            Realignment Frames <sup data-toggle="modal" data-target="#RealignmentModal">?</sup>
+          </h5>
+        </div>
+      </div>
+      <!-- realignment frames loop include -->
+      {% include "components/frame-review/realignment-frames-loop.njk" %}
+    </div> <!-- /.container -->
+  </form>
+</div> <!-- /.frame-review -->

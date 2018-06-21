@@ -1,0 +1,28 @@
+.brand-side-nav {
+  nav {
+    display: none;
+  }
+
+  .nav-toggle-side {
+    font-size: 140%;
+  }
+
+  a {
+    color: $gray;
+    font-size: 70%;
+
+    &:hover {
+      color: $normal-green;
+      text-decoration: none;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .brand-side-nav {
+    a {
+      font-size: 90%;
+    }
+  } // .brand-top-nav
+} // Medium

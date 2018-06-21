@@ -1,0 +1,26 @@
+<header class="py-1 text-uppercase">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col col-auto">
+        <a href="/index.html">
+          <img class="logo" src="assets/images/Altair-logo-white.svg" alt="logo">
+          <span class="sr-only">Altair</span>
+        </a>
+      </div> <!-- /.col -->
+      {% if active_page != 'index' %}
+        <div class="col col-auto ml-auto">
+          <p class="d-none d-md-inline mb-0">
+            <small>
+              1502606 Optometry PC Lansing
+            </small>
+          </p>
+          <p class="d-md-inline mb-0">
+            <small>
+              <a class="text-white logout" href="#logout">Logout</a>
+            </small>
+          </p>
+        </div> <!-- /.col -->
+      {% endif %}
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</header>

@@ -1,0 +1,27 @@
+.main-nav {
+  background: $gray;
+
+  a {
+    border-right: 1px solid $white;
+    color: $white;
+    padding: 0.5rem 0;
+
+    &.active {
+      background: $normal-green;
+    }
+
+    &.disabled {
+      color: $gray-400;
+    }
+
+    &:first-child {
+      border-left: 1px solid $white;
+    }
+
+    &:hover {
+      background: $normal-green;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{% extends "layout.njk" %}
+{% set active_page = "index" %}
+{% block content %}
+
+  {% include "components/header.njk" %}
+
+  <main>
+    {% include "components/login-form.njk" %}
+  </main>
+
+{% endblock %}

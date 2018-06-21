@@ -1,0 +1,48 @@
+<div class="frame-check">
+  <form action="#">
+    <div class="row align-items-center no-gutters mb-3 check-all">
+      <div class="col col-auto frame-checkbox mr-3">
+        <div class="circle-loader toggle" id="check-all">
+          <div class="checkmark draw"></div>
+          <input type="checkbox" name="frame">
+        </div>
+      </div>
+
+      <div class="col col-auto frame-description">
+        <p class="mb-0 line-height-normal">
+          <strong>
+            Check all 00 Altair Frames
+          </strong>
+        </p>
+      </div>
+    </div> <!-- /.row .frame -->
+
+
+    {% for frame in checkframes %}
+      <div class="row align-items-center no-gutters mb-3 frame">
+        <div class="col col-auto frame-checkbox mr-3">
+          <div class="circle-loader toggle">
+            <div class="checkmark draw"></div>
+            <input type="checkbox" name="frame">
+          </div>
+        </div>
+
+        <div class="col col-auto frame-image mr-3">
+          <img src="{{frame.src}}" alt="{{frame.alt}}">
+        </div>
+
+        <div class="col col-auto frame-description">
+          <p class="mb-0 line-height-normal">
+            <small>
+              <strong>
+                {{frame.model}} {{frame.desc}}
+              </strong>
+              <br>
+              {{frame.details}}
+            </small>
+          </p>
+        </div>
+      </div> <!-- /.row .frame -->
+    {% endfor %}
+  </form>
+</div> <!-- /.frame-check -->

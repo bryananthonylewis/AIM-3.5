@@ -1,0 +1,55 @@
+{% for frame in reviewFramesRealignment %}
+  <div class="row align-items-start align-items-md-center frame">
+    <div class="col-6 col-md-6 col-xl-5">
+      <div class="row align-items-start align-items-md-center">
+        <div class="col-12 col-md-5 col-xl-4">
+          <img src="{{frame.src}}" alt="{{frame.alt}}">
+        </div> <!-- /.col -->
+        <div class="col-12 col-md-7 col-xl-8 frame-description">
+          <p class="mb-0 line-height-normal">
+            <small>
+              {{frame.brand}}
+              <strong>
+                {{frame.model}}
+              </strong>
+              <br class="d-none d-xl-block"/>
+              {{frame.desc}} {{frame.details}}
+            </small>
+          </p>
+        </div> <!-- /.col -->
+      </div> <!-- /.row -->
+    </div> <!-- /.col -->
+
+    <div class="col-6 col-md-6 col-xl-7">
+      <div class="row align-items-start align-items-lg-center">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-auto">
+          <div class="custom-control custom-radio">
+            <input class="custom-control-input" type="radio" name="realignment-{{loop.index}}" id="realignment-invoice-only-{{loop.index}}" value="option">
+            <label class="custom-control-label" for="realignment-invoice-only-{{loop.index}}">
+              <small>
+                Invoice Only
+              </small>
+            </label>
+            <sup data-toggle="modal" data-target="#InvoiceAndRestockModal">
+              ?
+            </sup>
+          </div> <!-- /.custom-control -->
+        </div> <!-- /.col -->
+        <div class="col-12 col-md-6 col-lg-6 col-xl-auto">
+          <div class="custom-control custom-radio">
+            <input class="custom-control-input" type="radio" name="realignment-{{loop.index}}" id="realignment-returned-{{loop.index}}" value="option">
+            <label class="custom-control-label" for="realignment-returned-{{loop.index}}">
+              <small>Returned to Altair</small>
+            </label>
+            <sup data-toggle="modal" data-target="#ReturnedModal">
+              ?
+            </sup>
+          </div> <!-- /.custom-control -->
+        </div> <!-- /.col -->
+      </div> <!-- /.row -->
+    </div> <!-- /.col -->
+  </div> <!-- /.row -->
+  {% if not loop.last %}
+    <hr class="my-2">
+  {% endif %}
+{% endfor %}

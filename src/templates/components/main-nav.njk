@@ -1,0 +1,18 @@
+<div class="main-nav fixed-bottom">
+  <div class="container">
+    <div class="row text-center">
+      <a class="col {{ 'active' if active_page == 'home' else '' }}" href="home.html">
+        Home
+      </a>
+      <a class="col {{ 'active' if active_page == 'check' else '' }}" href="check.html">
+        Check
+      </a>
+      <a class="col {{ 'active' if active_page == 'review' else '' }}" href="review.html">
+        Review
+      </a>
+      <a class="col {{ 'active' if active_page == 'submit' else '' }} disabled" href="submit.html">
+        Submit
+      </a>
+   </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</div> <!-- /.main-nav -->
