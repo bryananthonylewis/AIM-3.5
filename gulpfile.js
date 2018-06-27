@@ -81,4 +81,4 @@ gulp.task("fonts", function() {
 });
 
 // if you want in separate stylesheet
-gulp.task("default", ["js", "serve", "fonts", "nunjucks"]);
+gulp.task("default", ["nunjucks", "sass", "js", "serve", "fonts"]);
