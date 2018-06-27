@@ -36,6 +36,15 @@
       </div> <!-- /.row -->
     </div> <!-- /.container -->
   </main>
+
   {% include "components/main-nav.njk" %}
+
+  <!-- Modals -->
+  {% include "components/modals/modal-in-stock.njk" %}
+  {% include "components/modals/modal-invoice-and-restock.njk" %}
+  {% include "components/modals/modal-invoice-only.njk" %}
+  {% include "components/modals/modal-return-to-altair.njk" %}
+  {% include "components/modals/modal-not-received.njk" %}
+  {% include "components/modals/modal-total-inventory.njk" %}
 
 {% endblock %}
