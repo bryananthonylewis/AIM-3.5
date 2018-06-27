@@ -1,12 +1,12 @@
 const gulp = require("gulp");
-const browserSync = require("browser-sync").create();
 const nunjucksRender = require("gulp-nunjucks-render");
 const data = require("gulp-data");
 const sass = require("gulp-sass");
+const browserSync = require("browser-sync").create();
 const concat = require("gulp-concat");
 const minify = require("gulp-minify");
 
-// Gets .html, .nunjucks, .njk files in pages
+// Gets .njk files in pages
 // Gets data.json
 // Outputs in src - can use HTML includes
 gulp.task("nunjucks", function() {
@@ -19,7 +19,7 @@ gulp.task("nunjucks", function() {
     )
     .pipe(
       nunjucksRender({
-        path: ["src/templates"] // Renders template with nunjucks
+        path: ["src/templates"] // Renders template
       })
     )
     .pipe(gulp.dest("src"));
@@ -34,15 +34,14 @@ gulp.task("sass", function() {
     .pipe(browserSync.stream());
 });
 
-// Grab jQuery, Bootstrap JS, & Popper
-// Output to scripts.js
+// Grab jQuery, Custom JS, Bootstrap JS, & Popper - Output to scripts.js
 gulp.task("js", function() {
   return gulp
     .src([
       "node_modules/jquery/dist/jquery.min.js",
-      "src/js/components/**/*.js",
-      "node_modules/bootstrap/dist/js/bootstrap.min.js"
-      // "node_modules/popper.js/dist/popper.min.js"
+      "node_modules/popper.js/dist/umd/popper.min.js",
+      "node_modules/bootstrap/dist/js/bootstrap.min.js",
+      "src/js/components/**/*.js"
     ])
     .pipe(concat("scripts.js"))
     .pipe(
@@ -81,16 +80,5 @@ gulp.task("fonts", function() {
     .pipe(gulp.dest("src/fonts"));
 });
 
-// Move Font Awesome CSS to src/css
-/*
-gulp.task("fa", function() {
-  return gulp
-    .src("node_modules/font-awesome/css/font-awesome.min.css")
-    .pipe(gulp.dest("src/css"));
-});
-*/
-
-// add "fa" to default task and uncomment
 // if you want in separate stylesheet
-
 gulp.task("default", ["js", "serve", "fonts", "nunjucks"]);
